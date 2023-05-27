@@ -13,7 +13,7 @@ public class MemoryMemberRepository implements MemberRepository{
     private static long sequence = 0L;
 
     @Override
-    public Member save(Member member) {
+    public Member save(Member member) {         //디비에서 저장하면 시퀀스로 id가 ++되게 지정
         member.setId(++sequence);
         store.put(member.getId(),member); //스토어에 저장(map)에[ 저장됨
         return member;
